@@ -14,6 +14,18 @@ client.set_my_commands([
     telebot.types.BotCommand("create_auction", "Create auction of your channel."),
     telebot.types.BotCommand("quit", "Leave all ongoing commands.")
 ])
+# States
+
+# Store user states (optional, you can use a database for better scalability)
+user_states = {}
+
+# Function to set user state
+def set_user_state(user_id, state):
+    user_states[user_id] = state
+
+# Function to get user state
+def get_user_state(user_id):
+    return user_states.get(user_id)
 
 # commands
 @client.message_handler(commands=["start"])
