@@ -28,7 +28,12 @@ def auction_command(message):
 
 @client.message_handler(commands=["create_auction"])
 def create_auction_command(message):
-    client.send_message(message.chat.id, "Test create auction message.")
+    client.send_message(message.chat.id, "You want to create auction? Let's start. Please add me to your channel and make me admin. Then send me the link of your channel.")
+
+@client.message_handler(commands=["quit"])
+def quit_command(message):
+    reset_user_state(message.chat.id)
+    client.send_message(message.chat.id, "You have left all ongoing commands.")
 
 # Callbacks
 
