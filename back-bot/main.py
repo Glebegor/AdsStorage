@@ -5,8 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv("SECRET_KEY")
-# frontUrl = os.getenv("FRONT_URL")
-frontUrl = "https://100.110.247.101:3000/"
+frontUrl = os.getenv("FRONT_URL")
 client = telebot.TeleBot(TOKEN)
 
 client.set_my_commands([
